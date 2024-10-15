@@ -1,3 +1,7 @@
+img {
+  height: auto;
+  width: auto;
+}
 body {
   background-color: hotpink;
 }
