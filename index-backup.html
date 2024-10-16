@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>WickedWx</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.css"/>
+        <link rel="stylesheet" href="./css/styles.css">
+        <script src="./script.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>WickedWx</h1>
+            <div class="dropdown citycard">
+                <div class="dropdown-trigger">
+                    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
+                        <span>What's Your City?</span>
+                        <span class="icon is-small">
+                            <i class="fas fa-angle-down"></i>
+                        </span>
+                    </button>
+                </div>
+                <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+                    <div class="dropdown-content">
+                    <a href="#bos" class="dropdown-item is-active" value="boston"> Boston </a>
+                    <hr class="dropdown-divider" />
+                    <a href="#day" class="dropdown-item" value="daytona"> Daytona </a>
+                    <a href="#oca" class="dropdown-item" value="ocala"> Ocala </a>
+                    <a href="#nap" class="dropdown-item" value="naples"> Naples </a>
+                    <a href="#tpa" class="dropdown-item" value="tampa"> Tampa </a>
+                </div>
+            </div>
+        </header>
+        <main>
+           
+            <br>
+            <div class="datacard card" id="displayCity">
+                <div class="card-content">
+                <!-- add weather icons to card next to data types-->
+                <!-- add bulma image modal classes to display gifs when icons are clicked-->
+                    <div class="media">
+                        <div class="media-left">
+                            <figure class="image is-48x48">
+                                <img src="./assets/images/thermometer_icon.png" alt="thermometer icon">
+                            </figure>
+                        </div>
+                        <div class="media-content">
+                            <b class="title is-4">Temperature</b>
+                            <span class="subtitle is-6" id="rtTemp"></span>
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="media-left">
+                            <figure class="image is-48x48">
+                                <img src="./assets/images/humidity_icon.png" alt="water drop">
+                            </figure>
+                        </div>
+                        <div class="media-content">
+                            <b class="title is-4">Humidity</b>
+                            <span class="subtitle is-6" id="rtHumidity"></span>
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="media-left">
+                            <figure class="image is-48x48">
+                                <img src="./assets/images/feelslike_icon.png" alt="">
+                            </figure>
+                        </div>
+                        <div class="media-content">
+                            <b class="title is-4">Feels Like</b>
+                            <span class="subtitle is-6" id="rtTempApp"></span>
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="media-left">
+                            <figure class="image is-48x48">
+                                <img src="./assets/images/precipitation_icon.png" alt="rain cloud">
+                            </figure>
+                        </div>
+                        <div class="media-content">
+                            <b class="title is-4">Chance of Precipitation</b>
+                            <span class="subtitle is-6" id="rtPrec"></span>
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="media-left">
+                            <figure class="image is-48x48">
+                                <img src="./assets/images/sun_icon.png" alt="sun emoji">
+                            </figure>
+                        </div>
+                        <div class="media-content">
+                            <b class="title is-4">UV Index</b>
+                            <span class="subtitle is-6" id="rtUV"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <br>
+        <footer>
+            <p>Made in Collaboration by:</p>
+            <p>Sarah Stewart, Matthew Franklin, Bruce Millspaugh, Margaux Glovier, Jacob Garland</p>
+            <p>With resources from: Tomorrow.io Weather API</p>
+        </footer>
+    </body>
+</html>

@@ -1,14 +1,47 @@
-#header {
-  background: #664c8f;
-  height: auto;
-  padding: 0%;
-}
-img {
-  height: auto;
-  width: auto;
-}
 body {
+  background-image: url(https://images.photowall.com/products/49098/tree-of-four-seasons.jpg?h=699&q=85);
+  background-size: cover;
+  background-position: center;
+}
+
+h1 {
+  color: black;
+  margin-top: 0%;
+  font-size: 500%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+p, b {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+footer {
   background-color: hotpink;
+  border-radius: 0.75rem;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+  width: 680px;
+  height: auto;
+  font-weight: bold;
+  margin-top: 1000px;
+}
+
+.citycard {
+  width: fit-content;
+  margin-left: 20px;
+  padding: 12px;
+  border-radius: 0.75rem;
+  background-color: hotpink;
+}
+
+.datacard {
+  background-color: aqua;
+  border-radius: 0.75rem;
 }
 
 .dropdown {
@@ -20,8 +53,10 @@ body {
   background-color: #4CAF50;
   color: white;
   padding: 16px;
+  margin-bottom: 12px;
   font-size: 16px;
-  border: none;
+  border-radius: 0.75rem;
+  border-color: aqua;
 }
 
 .dropdown-content {
