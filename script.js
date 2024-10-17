@@ -1,6 +1,3 @@
-// tomorrow.io Weather API key obtained by Jacob
-const apiKey = 'G9XOMDWf50dwOnT3nYGSQVYV90FEPHLp';
-
 // JS supplied by Bulma
 document.addEventListener('DOMContentLoaded', () => {
   // Functions to open and close a modal
@@ -45,61 +42,57 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// TODO: having issues with event listener grabbing values in html and using them in the fetch 
-const dropdown = document.getElementById('dropdown-menu3');
-dropdown.addEventListener('click', handleCitySelection);
-
-
-
-async function fetchWeatherData(city) {
+//--------------------------------------
+// the code below is for the weather api
+//--------------------------------------
+async function fetchWeatherData() {
+    // tomorrow.io Weather API key obtained by Jacob
+    const apiKey = 'G9XOMDWf50dwOnT3nYGSQVYV90FEPHLp';
+    const city = localStorage.getItem('lastSelectedCity');
     const url = `https://api.tomorrow.io/v4/weather/realtime?location=${city}&units=imperial&apikey=${apiKey}`;
+    const options = {method: 'GET', headers: {accept: 'application/json'}};
     
-    try {
-      const response = await fetch(url);
-      const data = await response.json();
-  
-      const temperature = data.values.temperature;
-      const humidity = data.values.humidity;
-      const feelsLike = data.values.temperatureApparent;
-      const rain = data.values.precipitationProbability;
-      const uvIndex = data.values.uvIndex;
-  
-      const tempEl = document.createElement('p');
-      tempEl.textContent = `${temperature}°F`;
-      const humiEl = document.createElement('p');
-      humiEl.textContent = `${humidity}%`;
-      const feelsEl = document.createElement('p');
-      feelsEl.textContent = `${feelsLike}°F`;
-      const rainEl = document.createElement('p');
-      rainEl.textContent = `${rain}%`;
-      const uvEl = document.createElement('p');
-      uvEl.textContent = `${uvIndex}`;
+    fetch(url, options)
+        .then((response) => response.json())
+        .then((response) => console.log(response))
+        .then((data) => {
+            const temperature = data.values.temperature;
+            const humidity = data.values.humidity;
+            const feelsLike = data.values.temperatureApparent;
+            const rain = data.values.precipitationProbability;
+            const uvIndex = data.values.uvIndex;
 
-      document.getElementById('rtTemp').appendChild(tempEl);
-      document.getElementById('rtHumidity').appendChild(humiEl);
-      document.getElementById('rtTempApp').appendChild(feelsEl);
-      document.getElementById('rtPrec').appendChild(rainEl);
-      document.getElementById('rtUV').appendChild(uvEl);
-
-    } catch (error) {
-      console.error('Error fetching weather data:', error);
-    } // will display error if there's an issue on the API side
+            const tempEl = document.createElement('p');
+            tempEl.innerText = `${temperature}°F`;
+            const humiEl = document.createElement('p');
+            humiEl.innerText = `${humidity}%`;
+            const feelsEl = document.createElement('p');
+            feelsEl.innerText = `${feelsLike}°F`;
+            const rainEl = document.createElement('p');
+            rainEl.innerText = `${rain}%`;
+            const uvEl = document.createElement('p');
+            uvEl.innerText = `${uvIndex}`;
+  
+            document.getElementById('rtTemp').appendChild(tempEl);
+            document.getElementById('rtHumidity').appendChild(humiEl);
+            document.getElementById('rtTempApp').appendChild(feelsEl);
+            document.getElementById('rtPrec').appendChild(rainEl);
+            document.getElementById('rtUV').appendChild(uvEl);
+        })
+        .catch(console.error)
 };
 
-// TODO: check following code after event listener is plugged in 
-function handleCitySelection(event) {
-    if (userCity > 0) {
-        fetchWeatherData(userCity);
-    } else { 
-    const selectedCity = event.target.value;
-    fetchWeatherData(selectedCity);
+function selectCity() {
+    fetchWeatherData(); 
+};
 
+// TODO: fix event listener
+// TODO: test rest of weather api script after fix, debug
+const dropdown = document.querySelectorAll('#cities')
+dropdown.addEventListener('change', () => {
+    const selectedCity = this.value;
+    selectCity(selectedCity);
+
+    localStorage.clear;
     localStorage.setItem('lastSelectedCity', selectedCity);
-}};
-
-function getUserCity() {
-    return localStorage.getitem('lastSelectedCity')
-};
-
-const userCity = getUserCity();
-
+});

@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>WickedWx</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.css"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
         <link rel="stylesheet" href="./css/styles.css">
         <script src="./script.js"></script>
     </head>
@@ -13,13 +13,13 @@
             <h1>WickedWx</h1>
 
             <div class="modal">
-            <div class="modal-background"></div>
-            <div class="modal-content">
-                <p class="image is-4by3">
-                    <img src="./assets/images/stanman.png" alt="Stanley the GOAT">
-                </p>
-            </div>
-            <button class="modal-close is-large" aria-label="close"></button>
+                <div class="modal-background"></div>
+                <div class="modal-content">
+                    <p class="image is-4by3">
+                        <img src="./assets/images/stanman.png" alt="Stanley the GOAT">
+                    </p>
+                </div>
+            <button class=" modal-close is-large" aria-label="close"></button>
             </div>
                 <center>
             <button class="js-modal-trigger" data-target= <img src="./assets/images/stanman.png" alt="Stanlet the GOAT">
@@ -27,33 +27,24 @@
             </button>
                 </center>
 
-            <div class="dropdown citycard">
-                <div class="dropdown-trigger">
-                    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
-                        <span>What's Your City?</span>
-                        <span class="icon is-small">
-                            <i class="fas fa-angle-down"></i>
-                        </span>
-                    </button>
-                </div>
-                <div class="dropdown-menu" id="dropdown-menu3" role="menu">
-                    <div class="dropdown-content">
-                    <a href="#bos" class="dropdown-item is-active" value="boston"> Boston </a>
-                    <hr class="dropdown-divider" />
-                    <a href="#day" class="dropdown-item" value="daytona"> Daytona </a>
-                    <a href="#oca" class="dropdown-item" value="ocala"> Ocala </a>
-                    <a href="#nap" class="dropdown-item" value="naples"> Naples </a>
-                    <a href="#tpa" class="dropdown-item" value="tampa"> Tampa </a>
+            <div class="citycard">
+                <div class="select is-link is-large is-focused">
+                    <select>
+                        <option> What's Your City? </option>
+                        <option value="boston" id="cities"> Boston </option>
+                        <option value="daytona" id="cities"> Daytona </option>
+                        <option value="naples" id="cities"> Naples </option>
+                        <option value="ocala" id="cities"> Ocala </option>
+                        <option value="tampa" id="cities"> Tampa </option>
+                    </select>
                 </div>
             </div>
         </header>
+        <br>
+        <br>
         <main>
-           
-            <br>
             <div class="datacard card" id="displayCity">
                 <div class="card-content">
-                <!-- add weather icons to card next to data types-->
-                <!-- add bulma image modal classes to display gifs when icons are clicked-->
                     <div class="media">
                         <div class="media-left">
                             <figure class="image is-48x48">
@@ -61,8 +52,8 @@
                             </figure>
                         </div>
                         <div class="media-content">
-                            <b class="title is-4">Temperature</b>
-                            <span class="subtitle is-6" id="rtTemp"></span>
+                            <p class="title is-2 has-text-black">Temperature</p>
+                            <p class="subtitle is-4 has-text-black" id="rtTemp"></p>
                         </div>
                     </div>
                     <div class="media">
@@ -72,19 +63,19 @@
                             </figure>
                         </div>
                         <div class="media-content">
-                            <b class="title is-4">Humidity</b>
-                            <span class="subtitle is-6" id="rtHumidity"></span>
+                            <p class="title is-2 has-text-black">Humidity</p>
+                            <p class="subtitle is-4 has-text-black" id="rtHumidity"></p>
                         </div>
                     </div>
                     <div class="media">
                         <div class="media-left">
                             <figure class="image is-48x48">
-                                <img src="./assets/images/feelslike_icon.png" alt="">
+                                <img src="./assets/images/feelslike_icon.png" alt="fever emoji">
                             </figure>
                         </div>
                         <div class="media-content">
-                            <b class="title is-4">Feels Like</b>
-                            <span class="subtitle is-6" id="rtTempApp"></span>
+                            <p class="title is-2 has-text-black">Feels Like</p>
+                            <p class="subtitle is-4 has-text-black" id="rtTempApp"></p>
                         </div>
                     </div>
                     <div class="media">
@@ -94,8 +85,8 @@
                             </figure>
                         </div>
                         <div class="media-content">
-                            <b class="title is-4">Chance of Precipitation</b>
-                            <span class="subtitle is-6" id="rtPrec"></span>
+                            <p class="title is-2 has-text-black">Chance of Precipitation</p>
+                            <p class="subtitle is-4 has-text-black" id="rtPrec"></p>
                         </div>
                     </div>
                     <div class="media">
@@ -105,8 +96,8 @@
                             </figure>
                         </div>
                         <div class="media-content">
-                            <b class="title is-4">UV Index</b>
-                            <span class="subtitle is-6" id="rtUV"></span>
+                            <p class="title is-2 has-text-black">UV Index</p>
+                            <p class="subtitle is-4 has-text-black" id="rtUV"></p>
                         </div>
                     </div>
                 </div>
