@@ -21,6 +21,7 @@ p, b {
 
 footer {
   background-color: hotpink;
+  color: white;
   border-radius: 0.75rem;
   display: inline-flex;
   flex-wrap: wrap;
