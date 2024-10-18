@@ -1,3 +1,8 @@
+:root {
+  --orange: rgb(201, 95, 9);
+  --aqua: #00ffff;
+}
+
 body {
   background-image: url(https://images.photowall.com/products/49098/tree-of-four-seasons.jpg?h=699&q=85);
   background-size: cover;
@@ -7,39 +12,30 @@ body {
 h1 {
   color: black;
   margin-top: 0%;
-  font-size: 500%;
+  font-size: 800%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-p, b {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-footer {
-  background-color: hotpink;
+ footer {
+  background-color: var(--orange);
   border-radius: 0.75rem;
-  display: inline-flex;
-  flex-wrap: wrap;
-  justify-content: center; 
   width: 680px;
-  height: auto;
-  font-weight: bold;
-  margin-top: 1000px;
+  margin-top: 900px;
+  margin-left: 32px;
 }
 
 .citycard {
   width: fit-content;
-  margin-left: 20px;
-  padding: 12px;
+  margin-left: 32px;
+  padding: 16px;
   border-radius: 0.75rem;
-  background-color: hotpink;
+  background-color: var(--orange);
 }
 
 .datacard {
-  background-color: aqua;
+  background-color: var(--orange);
   border-radius: 0.75rem;
+  margin: 32px;
 }

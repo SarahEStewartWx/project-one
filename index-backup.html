@@ -11,31 +11,35 @@
     <body>
         <header>
             <h1>WickedWx</h1>
-
+            <center>
+            <button class="js-modal-trigger button is-warning is-large is-inverted is-focused" data-target="modal-content">
+                Click Me
+            </button>
+            </center>
             <div class="modal">
-                <div class="modal-background"></div>
-                <div class="modal-content">
-                    <p class="image is-4by3">
-                        <img src="./assets/images/stanman.png" alt="Stanley the GOAT">
-                    </p>
-                </div>
-            <button class=" modal-close is-large" aria-label="close"></button>
+            <div class="modal-background"></div>
+            <div class="modal-content">
+                <p class="image-is24x24">
+                    <img src="./assets/images/stanman.png" alt="Stanley">
+                </p>
+            </div>
+            <button class="modal-close is-large" aria-label="close"></button>
             </div>
                 <center>
-            <button class="js-modal-trigger" data-target= img src="./assets/images/stanman.png" alt="Stanlet the GOAT">
-            Click me!    
+            <button class="js-modal-trigger" data-target= <img src="./assets/images/stanman.png" alt="Stanlet the GOAT">
+            Click me if you dare    
             </button>
                 </center>
 
             <div class="citycard">
-                <div class="select is-link is-large is-focused">
-                    <select>
+                <div class="select is-warning is-large">
+                    <select id="dropdownMenu">
                         <option> What's Your City? </option>
-                        <option value="boston" id="cities"> Boston </option>
-                        <option value="daytona" id="cities"> Daytona </option>
-                        <option value="naples" id="cities"> Naples </option>
-                        <option value="ocala" id="cities"> Ocala </option>
-                        <option value="tampa" id="cities"> Tampa </option>
+                        <option value="boston"> Boston </option>
+                        <option value="daytona"> Daytona </option>
+                        <option value="naples"> Naples </option>
+                        <option value="ocala"> Ocala </option>
+                        <option value="tampa"> Tampa </option>
                     </select>
                 </div>
             </div>
@@ -43,72 +47,79 @@
         <br>
         <br>
         <main>
-            <div class="datacard card" id="displayCity">
-                <div class="card-content">
-                    <div class="media">
+            <div class="datacard card">
+                <header class="card-header">
+                    <p class="has-text-black title card-header-title is-1 is-underlined" id="displayCity"> City </p>
+                    <div></div>
+                </header>
+                <div class="card-content has-text-centered">
+                    <div class="box">
                         <div class="media-left">
-                            <figure class="image is-48x48">
+                            <figure class="image is-96x96">
                                 <img src="./assets/images/thermometer_icon.png" alt="thermometer icon">
                             </figure>
                         </div>
-                        <div class="media-content">
-                            <p class="title is-2 has-text-black">Temperature</p>
-                            <p class="subtitle is-4 has-text-black" id="rtTemp"></p>
+                        <div class="content">
+                            <p class="title is-3">Temperature</p>
+                            <p class="title is-4" id="rtTemp"> test </p>
                         </div>
                     </div>
-                    <div class="media">
+
+                    <div class="box">
                         <div class="media-left">
                             <figure class="image is-48x48">
                                 <img src="./assets/images/humidity_icon.png" alt="water drop">
                             </figure>
                         </div>
-                        <div class="media-content">
-                            <p class="title is-2 has-text-black">Humidity</p>
-                            <p class="subtitle is-4 has-text-black" id="rtHumidity"></p>
+                        <div class="content">
+                            <p class="title is-3">Humidity</p>
+                            <p class="title is-4" id="rtHumidity"> test </p>
                         </div>
                     </div>
-                    <div class="media">
+
+                    <div class="box">
                         <div class="media-left">
-                            <figure class="image is-48x48">
+                            <figure class="image is-96x96">
                                 <img src="./assets/images/feelslike_icon.png" alt="fever emoji">
                             </figure>
                         </div>
-                        <div class="media-content">
-                            <p class="title is-2 has-text-black">Feels Like</p>
-                            <p class="subtitle is-4 has-text-black" id="rtTempApp"></p>
+                        <div class="content">
+                            <p class="title is-3">Feels Like</p>
+                            <p class="title is-4" id="rtTempApp"> test </p>
                         </div>
                     </div>
-                    <div class="media">
+
+                    <div class="box">
                         <div class="media-left">
-                            <figure class="image is-48x48">
+                            <figure class="image is-96x96">
                                 <img src="./assets/images/precipitation_icon.png" alt="rain cloud">
                             </figure>
                         </div>
-                        <div class="media-content">
-                            <p class="title is-2 has-text-black">Chance of Precipitation</p>
-                            <p class="subtitle is-4 has-text-black" id="rtPrec"></p>
+                        <div class="content">
+                            <p class="title is-3">Chance of Precipitation</p>
+                            <p class="title is-4" id="rtPrec"> test </p>
                         </div>
                     </div>
-                    <div class="media">
+
+                    <div class="box">
                         <div class="media-left">
-                            <figure class="image is-48x48">
+                            <figure class="image is-96x96">
                                 <img src="./assets/images/sun_icon.png" alt="sun emoji">
                             </figure>
                         </div>
-                        <div class="media-content">
-                            <p class="title is-2 has-text-black">UV Index</p>
-                            <p class="subtitle is-4 has-text-black" id="rtUV"></p>
+                        <div class="content">
+                            <p class="title is-3">UV Index</p>
+                            <p class="title is-4" id="rtUV"> test </p>
                         </div>
                     </div>
                 </div>
             </div>
         </main>
         <br>
-        <script src="script.js"></script>
-    </body>
-    <footer>
-        <p>Made in Collaboration by:</p>
+        <footer>
+            <p>Made in Collaboration by:</p>
             <p>Sarah Stewart, Matthew Franklin, Bruce Millspaugh, Margaux Glovier, Jacob Garland</p>
             <p>With resources from: Tomorrow.io Weather API</p>
-    </footer>
+        </footer>
+    </body>
 </html>
