@@ -1,5 +1,6 @@
 :root {
   --orange: rgb(201, 95, 9);
+  --aqua: #00ffff;
 }
 
 body {
@@ -12,12 +13,6 @@ h1 {
   color: black;
   margin-top: 0%;
   font-size: 800%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-p, b {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

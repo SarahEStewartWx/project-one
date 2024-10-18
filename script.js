@@ -90,7 +90,7 @@ function checkLocalStorage() {
     }
 };
 
-// TODO: fix 
+// TODO: fix menu listener, add function to add selected city name to card header
 // event listener for dropdown menu
 // TODO: test rest of weather api script after fix, debug
 const dropdownMenu = document.getElementsByTagName("option");
