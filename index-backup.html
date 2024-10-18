@@ -12,7 +12,7 @@
         <header>
             <h1>WickedWx</h1>
             <center>
-            <button class="js-modal-trigger" data-target="modal-content">
+            <button class="js-modal-trigger button is-warning is-large is-inverted is-focused" data-target="modal-content">
                 Click Me
                </button>
             </center>
@@ -27,14 +27,14 @@
            </div>
 
             <div class="citycard">
-                <div class="select is-link is-large is-focused">
-                    <select>
+                <div class="select is-warning is-large is-focused">
+                    <select id="dropdownMenu">
                         <option> What's Your City? </option>
-                        <option value="boston" id="cities"> Boston </option>
-                        <option value="daytona" id="cities"> Daytona </option>
-                        <option value="naples" id="cities"> Naples </option>
-                        <option value="ocala" id="cities"> Ocala </option>
-                        <option value="tampa" id="cities"> Tampa </option>
+                        <option value="boston"> Boston </option>
+                        <option value="daytona"> Daytona </option>
+                        <option value="naples"> Naples </option>
+                        <option value="ocala"> Ocala </option>
+                        <option value="tampa"> Tampa </option>
                     </select>
                 </div>
             </div>
@@ -42,7 +42,11 @@
         <br>
         <br>
         <main>
-            <div class="datacard card" id="displayCity">
+            <div class="datacard card">
+                <header class="card-header">
+                    <p class="title is-1 has-text-black card-header-title is-underlined" id="displayCity"> City Name </p>
+                    <div></div>
+                </header>
                 <div class="card-content">
                     <div class="media">
                         <div class="media-left">
@@ -52,19 +56,18 @@
                         </div>
                         <div class="media-content">
                             <p class="title is-2 has-text-black">Temperature</p>
-                            <p class="subtitle is-4 has-text-black" id="rtTemp"></p>
+                            <p class="title is-4 has-text-black" id="rtTemp"></p>
                         </div>
                     </div>
                     <div class="media">
                         <div class="media-left">
-                            <figure class="image is-48x48">
+                            <figure class="image is-32x32">
                                 <img src="./assets/images/humidity_icon.png" alt="water drop">
                             </figure>
                         </div>
                         <div class="media-content">
                             <p class="title is-2 has-text-black">Humidity</p>
-                            <p class="subtitle is-4 has-text-black" id="rtHumidity"></p>
-                            <div></div>    
+                            <p class="title is-4 has-text-black" id="rtHumidity"></p>
                         </div>
                     </div>
                     <div class="media">
@@ -75,7 +78,7 @@
                         </div>
                         <div class="media-content">
                             <p class="title is-2 has-text-black">Feels Like</p>
-                            <p class="subtitle is-4 has-text-black" id="rtTempApp"></p>
+                            <p class="title is-4 has-text-black" id="rtTempApp"></p>
                         </div>
                     </div>
                     <div class="media">
@@ -86,7 +89,7 @@
                         </div>
                         <div class="media-content">
                             <p class="title is-2 has-text-black">Chance of Precipitation</p>
-                            <p class="subtitle is-4 has-text-black" id="rtPrec"></p>
+                            <p class="title is-4 has-text-black" id="rtPrec"></p>
                         </div>
                     </div>
                     <div class="media">
@@ -97,7 +100,7 @@
                         </div>
                         <div class="media-content">
                             <p class="title is-2 has-text-black">UV Index</p>
-                            <p class="subtitle is-4 has-text-black" id="rtUV"></p>
+                            <p class="title is-4 has-text-black" id="rtUV"></p>
                         </div>
                     </div>
                 </div>
@@ -105,9 +108,11 @@
         </main>
         <br>
         <footer>
-            <p>Made in Collaboration by:</p>
-            <p>Sarah Stewart, Matthew Franklin, Bruce Millspaugh, Margaux Glovier, Jacob Garland</p>
-            <p>With resources from: Tomorrow.io Weather API</p>
+            <div class="content has-text-centered has-text-weight-bold has-text-black">
+                <p class="is-underlined">Made in Collaboration by:</p>
+                <p>Sarah Stewart, Matthew Franklin, Bruce Millspaugh, Margaux Glovier, Jacob Garland</p>
+                <a href="https://www.tomorrow.io/" class="">With resources from Tomorrow.io Weather API</a>
+            </div>
         </footer>
     </body>
 </html>
