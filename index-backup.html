@@ -11,21 +11,26 @@
     <body>
         <header>
             <h1>WickedWx</h1>
-            <center>
-            <button class="js-modal-trigger button is-warning is-large is-inverted is-focused" data-target="modal-content">
-                Click Me
-            </button>
-            </center>
-            <div class="modal">
-            <div class="modal-background"></div>
-            <div class="modal-content">
-                <p class="image-is24x24">
-                    <img src="./assets/images/stanman.png" alt="Stanley">
-                </p>
-            </div>
-            <button class="modal-close is-large" aria-label="close"></button>
-            </div>
-
+            
+            <div class="container">
+               
+              <center>
+                <button onclick="document.getElementById('modal01').style.display='block'"
+                class="button">Click Me</button>
+                </center>
+            
+                <div id="modal01" class="modal" onclick="this.style.display='none'">
+                  <span class="button hover xlarge display-topright">&times;</span>
+                  <div class="modal-content animate-zoom">
+                   
+                    <center>
+                    <img src="./assets/images/stanman.png" style="width:500px; height:20%">
+                    </center>
+                   
+                  </div>
+                </div>
+              </div>
+            
             <div class="citycard">
                 <div class="select is-warning is-large">
                     <select id="dropdownMenu">
