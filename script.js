@@ -55,17 +55,20 @@ function checkLocalStorage() {
     }
 };
 
-// TODO: fix menu listener, add function to add selected city name to card header
 // event listener for dropdown menu
-// TODO: test rest of weather api script after fix, debug
-const dropdownMenu = document.getElementsByTagName("option");
+document.addEventListener('DOMContentLoaded', () => {
+  const cityMenu = document.getElementById('dropdownMenu');
 
-dropdownMenu.addEventListener("change", () => {
+  cityMenu.addEventListener('change', () => {
     const selectedCity = dropdownMenu.value;
     selectCity(selectedCity);
+  });
 });
 
 // Event listener for loading last selected city set in storage when page refreshes or opens 
 window.addEventListener("load", checkLocalStorage);
 
+//------------------------------------------------------------
+// TODO: add function to add selected city name to card header
+// TODO: test rest of weather api script after fix, debug
 //-----------------------------------------------------------------------------------------
