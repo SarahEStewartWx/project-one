@@ -16,7 +16,10 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  text-decoration: underline;
+  
 }
+
 
  footer {
   background-color: var(--orange);
