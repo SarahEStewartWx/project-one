@@ -29,7 +29,6 @@ try {
 // function to handle the city selected or found in local storage
 function selectCity(city) {
     console.log("Selected City:", city);
-    localStorage.clear;
     localStorage.setItem("selectedCity", city);
 
     fetchWeatherData(city); 
