@@ -11,31 +11,20 @@ var modal = document.getElementById('id01');
 // the code below is for the weather api
 //--------------------------------------
 // function to fetch weather from API
-async function fetchWeatherData(city) {
-    // tomorrow.io Weather API key obtained by Jacob
-    const apiKey = 'G9XOMDWf50dwOnT3nYGSQVYV90FEPHLp';
 
-    const url = `https://api.tomorrow.io/v4/weather/realtime?location=${city}&units=imperial&apikey=${apiKey}`;
-    const options = {method: 'GET', headers: {accept: 'application/json'}};
+    const url = 'https://api.weatherstack.com/current?access_key={9dda21169e1e7bf39cf63444df1ab946}&query=Boston,Daytona,Naples,Ocala,Tampa';
+    const options = {
+	method: 'GET'
     
-    fetch(url, options)
-        .then((response) => response.json())
-        .then((response) => console.log(response))
-        .then((data) => {
-            const temperature = data.data[0].values.temperature;
-            const humidity = data.data[0].values.humidity;
-            const feelsLike = data.data[0].values.temperatureApparent;
-            const rain = data.data[0].values.precipitationProbability;
-            const uvIndex = data.data[0].values.uvIndex;
-
-            document.getElementById('rtTemp').textContent = `${temperature}°F`;
-            document.getElementById('rtHumidity').textContent = `${humidity}%`;
-            document.getElementById('rtTempApp').textContent = `${feelsLike}°F`;
-            document.getElementById('rtPrec').textContent = `${rain}% chance`;
-            document.getElementById('rtUV').textContent = `The UV Index is ${uvIndex}`;
-        })
-        .catch(console.error)
 };
+
+try {
+	const response = await fetch(url, options);
+	const result = await response.text();
+	console.log(result);
+} catch (error) {
+	console.error(error);
+}
 
 // function to handle the city selected or found in local storage
 function selectCity(city) {
