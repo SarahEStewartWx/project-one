@@ -10,22 +10,26 @@
     </head>
     <body>
         <header>
-            <h1>WickedWx</h1>
-            <center>
-            <button class="js-modal-trigger button is-warning is-large is-inverted is-focused" data-target="modal-content">
-                Click Me
-            </button>
-            </center>
-            <div class="modal">
-            <div class="modal-background"></div>
-            <div class="modal-content">
-                <p class="image-is24x24">
-                    <img src="./assets/images/stanman.png" alt="Stanley">
-                </p>
+            <h1><strong class="has-text-black">WickedWx</strong></h1>
+            
+            <!-- New Modal Code -->
+            <div class="container">
+               
+              <center>
+                <button onclick="document.getElementById('modal01').style.display='block'"
+                class="button"> Click Me </button>
+                </center>
+            
+                <div id="modal01" class="modal" onclick="this.style.display='none'">
+                  <span class="button hover xlarge display-topright">&times;</span>
+                  <div class="modal-content animate-zoom">
+                   
+                    <center>
+                    <img src="./assets/images/stanman.png" style="vertical-align: middle;margin:165px 0px">
+                    </center> 
+                  </div>
+                </div>
             </div>
-            <button class="modal-close is-large" aria-label="close"></button>
-            </div>
-
             <div class="citycard">
                 <form>
                     <div class="select is-warning">
@@ -58,7 +62,7 @@
                         </div>
                         <div class="content">
                             <p class="title is-3">Temperature</p>
-                            <p class="title is-4" id="rtTemp"> </p>
+                            <p class="title is-4" id="rtTemp"> test </p>
                         </div>
                     </div>
 
@@ -70,7 +74,7 @@
                         </div>
                         <div class="content">
                             <p class="title is-3">Humidity</p>
-                            <p class="title is-4" id="rtHumidity"> </p>
+                            <p class="title is-4" id="rtHumidity"> test </p>
                         </div>
                     </div>
 
@@ -82,7 +86,7 @@
                         </div>
                         <div class="content">
                             <p class="title is-3">Feels Like</p>
-                            <p class="title is-4" id="rtTempApp"> </p>
+                            <p class="title is-4" id="rtTempApp"> test </p>
                         </div>
                     </div>
 
@@ -94,7 +98,7 @@
                         </div>
                         <div class="content">
                             <p class="title is-3">Chance of Precipitation</p>
-                            <p class="title is-4" id="rtPrec"> </p>
+                            <p class="title is-4" id="rtPrec"> test </p>
                         </div>
                     </div>
 
@@ -106,7 +110,7 @@
                         </div>
                         <div class="content">
                             <p class="title is-3">UV Index</p>
-                            <p class="title is-4" id="rtUV"> </p>
+                            <p class="title is-4" id="rtUV"> test </p>
                         </div>
                     </div>
                 </div>
@@ -114,10 +118,11 @@
         </main>
         <br>
         <footer>
-            <p>Made in Collaboration by:</p>
-            <p>Sarah Stewart, Matthew Franklin, Bruce Millspaugh, Margaux Glovier, Jacob Garland</p>
-            <p>With resources from: Tomorrow.io Weather API</p>
+            <div class="content has-text-centered has-text-weight-bold has-text-black">
+                <p class="is-underlined">Made in Collaboration by:</p>
+                <p>Sarah Stewart, Matthew Franklin, Bruce Millspaugh, Margaux Glovier, Jacob Garland</p>
+                <a href="https://www.tomorrow.io/" class="">With resources from Tomorrow.io Weather API</a>
+            </div>
         </footer>
-        <script src="script.js"></script>
     </body>
 </html>
