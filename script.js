@@ -1,5 +1,13 @@
 
 //--------------------------------------
+// Modal Code
+var modal = document.getElementById('id01');
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+//--------------------------------------
 // the code below is for the weather api
 //--------------------------------------
 // function to fetch weather from API
@@ -47,61 +55,20 @@ function checkLocalStorage() {
     }
 };
 
-// TODO: fix menu listener, add function to add selected city name to card header
 // event listener for dropdown menu
-// TODO: test rest of weather api script after fix, debug
-const dropdownMenu = document.getElementsByTagName("option");
+document.addEventListener('DOMContentLoaded', () => {
+  const cityMenu = document.getElementById('dropdownMenu');
 
-dropdownMenu.addEventListener("change", () => {
+  cityMenu.addEventListener('change', () => {
     const selectedCity = dropdownMenu.value;
     selectCity(selectedCity);
+  });
 });
 
 // Event listener for loading last selected city set in storage when page refreshes or opens 
 window.addEventListener("load", checkLocalStorage);
 
+//------------------------------------------------------------
+// TODO: add function to add selected city name to card header
+// TODO: test rest of weather api script after fix, debug
 //-----------------------------------------------------------------------------------------
-
-// JS for Modal supplied by Bulma
-document.addEventListener('DOMContentLoaded', () => {
-  // Functions to open and close a modal
-  function openModal($el) {
-    $el.classList.add('is-active');
-  }
-
-  function closeModal($el) {
-    $el.classList.remove('is-active');
-  }
-
-  function closeAllModals() {
-    (document.querySelectorAll('.modal') || []).forEach(($modal) => {
-      closeModal($modal);
-    });
-  }
-
-  // Add a click event on buttons to open a specific modal
-  (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
-    const modal = $trigger.dataset.target;
-    const $target = document.getElementById(modal);
-
-    $trigger.addEventListener('click', () => {
-      openModal($target);
-    });
-  });
-
-  // Add a click event on various child elements to close the parent modal
-  (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
-    const $target = $close.closest('.modal');
-
-    $close.addEventListener('click', () => {
-      closeModal($target);
-    });
-  });
-
-  // Add a keyboard event to close all modals
-  document.addEventListener('keydown', (event) => {
-    if(event.key === "Escape") {
-      closeAllModals();
-    }
-  });
-});
