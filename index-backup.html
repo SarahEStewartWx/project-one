@@ -31,19 +31,23 @@
             </div>
             <div class="citycard">
                 <form>
-                    <div class="select is-warning">
-                        <select id="dropdownMenu">
-                            <option> What's Your City? </option>
-                            <option value="boston"> Boston </option>
-                            <option value="daytona"> Daytona </option>
-                            <option value="naples"> Naples </option>
-                            <option value="ocala"> Ocala </option>
-                            <option value="tampa"> Tampa </option>
+                    <div class="dropdown">
+                        <form>
+                        <select name="list" id="list" accesskey="target">
+                            <option value="none">Choose Your City</option>
+                            <option value="one">Boston</option>
+                            <option value="two">Daytona Beach</option>
+                            <option value="three">Naples</option>
+                            <option value="four">Ocala</option>
+                            <option value="five">Tampa</option>
                         </select>
+                        <input type=button value="Select" onclick="optionClicked()" />
+                        </form>
+                        </div>
                     </div>
-                    <input type="submit" value="Select City" class="button has-text-warning is-dark is-focused">
-                </form>
-            </div>
+                    <div id="div"></div>
+                        <script src="weather.js"></script>
+                        <link rel="stylesheet" href="dropdown.css">
         </header>
         <br>
         <main>
@@ -59,9 +63,9 @@
                                 <img src="./assets/images/thermometer_icon.png" alt="thermometer icon">
                             </figure>
                         </div>
-                        <div class="content">
+                        <div class="content is-1">
                             <p class="title is-3">Average High Temperature</p>
-                            <p class="title is-4" id="rtTemp"> <href src="https://api.weatherstack.com/current?access_key={9dda21169e1e7bf39cf63444df1ab946}"></href>
+                            <p class="title is-4" id="rtTemp"> --!-- </p>
                             </p>
                         </div>
                     </div>
@@ -74,7 +78,7 @@
                         </div>
                         <div class="content">
                             <p class="title is-3">Average Humidity</p>
-                            <p class="title is-4" id="rtHumidity"> </p>
+                            <p class="title is-4" id="rtHumidity"> --!-- </p>
                         </div>
                     </div>
 
@@ -86,7 +90,7 @@
                         </div>
                         <div class="content">
                             <p class="title is-3">Average Feels Like Temperature</p>
-                            <p class="title is-4" id="rtTempApp"> </p>
+                            <p class="title is-4" id="rtTempApp"> --!-- </p>
                         </div>
                     </div>
 
@@ -98,7 +102,7 @@
                         </div>
                         <div class="content">
                             <p class="title is-3">Average Monthly Rain Fall</p>
-                            <p class="title is-4" id="rtPrec"> </p>
+                            <p class="title is-4" id="rtPrec"> --!-- </p>
                         </div>
                     </div>
 
@@ -110,7 +114,7 @@
                         </div>
                         <div class="content">
                             <p class="title is-3">Average UV Index</p>
-                            <p class="title is-4" id="rtUV"> </p>
+                            <p class="title is-4" id="rtUV"> --!-- </p>
                         </div>
                     </div>
                 </div>
