@@ -24,7 +24,7 @@ npm install
 
 1. Start the application:
 npm start
-2. Open your browser and go to http://localhost:3000 to view the app.
+2. Open your browser and go to https://sarahestewartwx.github.io/project-one/ to view the app.
 ![alt text](<assets/images/Screenshot 2024-10-21 172357.png>)
 
 ## Features 
