@@ -1,30 +1,37 @@
-
-//--------------------------------------
-// Modal Code
+// Image modal
 var modal = document.getElementById('id01');
                 window.onclick = function(event) {
                     if (event.target == modal) {
                         modal.style.display = "none";
                     }
-                }
-//--------------------------------------
-// the code below is for the weather api
-//--------------------------------------
-// function to fetch weather from API
+                };
 
-    const url = 'https://api.weatherstack.com/current?access_key={9dda21169e1e7bf39cf63444df1ab946}&query=Boston,Daytona,Naples,Ocala,Tampa';
-    const options = {
-	method: 'GET'
-    
+// Weather API
+async function fetchWeatherData(city) {
+  const apiKey = 'G9XOMDWf50dwOnT3nYGSQVYV90FEPHLp';
+  const url = `https://api.tomorrow.io/v4/weather/realtime?location=${city}&units=imperial&apikey=${apiKey}`;
+  const options = {method: 'GET', headers: {accept: 'application/json'}};
+                  
+  fetch(url, options)
+    .then(response => response.json())
+    .then(response => {
+      console.log(response);
+                        
+      const temp = response.data.values.temperature;
+      const humidity = response.data.values.humidity;
+      const feelsLike = response.data.values.temperatureApparent;
+      const rain = response.data.values.precipitationProbability;
+      const uvIndex = response.data.values.uvIndex;
+                      
+      document.getElementById('displayCity').textContent = `${city}`;
+      document.getElementById('rtTemp').textContent = `${temp}°F`;
+      document.getElementById('rtHumidity').textContent = `${humidity}%`;
+      document.getElementById('rtTempApp').textContent = `${feelsLike}°F`;
+      document.getElementById('rtPrec').textContent = `${rain}% chance of rain`;
+      document.getElementById('rtUV').textContent = `The UV Index is ${uvIndex}`;
+    })
+    .catch(err => console.error(err));
 };
-
-try {
-	const response = await fetch(url, options);
-	const result = await response.text();
-	console.log(result);
-} catch (error) {
-	console.error(error);
-}
 
 // function to handle the city selected or found in local storage
 function selectCity(city) {
@@ -34,7 +41,7 @@ function selectCity(city) {
     fetchWeatherData(city); 
 };
 
-// function for local storage for project guidelines, does nothing if storage is empty 
+// function for local storage, does nothing if storage is empty 
 function checkLocalStorage() {
     const storedCity = localStorage.getItem("selectedCity");
 
@@ -55,8 +62,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Event listener for loading last selected city set in storage when page refreshes or opens 
 window.addEventListener("load", checkLocalStorage);
-
-//------------------------------------------------------------
-// TODO: add function to add selected city name to card header
-// TODO: test rest of weather api script after fix, debug
-//-----------------------------------------------------------------------------------------

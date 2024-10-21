@@ -1,66 +1,129 @@
-<!doctype html>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
 <html lang="en">
-    
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>WickedWx</title>
-        <!-- Required meta tags -->
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-        <!-- Bootstrap CSS v5.2.1 -->
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-            crossorigin="anonymous"
-        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+        <link rel="stylesheet" href="./css/styles.css">
     </head>
-    <style>
-        body {
-        background-color: rgb(196, 238, 255);
-}  
-    </style>
-
-    <body> 
+    <body>
         <header>
-            <style>
-                h1 {
-  color: black;
-  margin-left: 725px;
-  margin-top: 2%;
-  font-size: 500%;
-}
-</style>
-            <h1>WickedWx</h1>
-            <style>
-                img {
-                    margin-inline-start: 500px;
-                }
-            </style>
-            <img src="https://images.photowall.com/products/49098/tree-of-four-seasons.jpg?h=699&q=85">
-        </header>
-        <main>
+            <h1><strong class="has-text-black">WickedWx</strong></h1>
             
-            <center>
-            <label for="weather">What would you like to know?</label>
+            <!-- New Modal Code -->
+            <div class="container">
+               
+              <center>
+                <button onclick="document.getElementById('modal01').style.display='block'"
+                class="button"> Click Me </button>
+                </center>
+            
+                <div id="modal01" class="modal" onclick="this.style.display='none'">
+                  <span class="button hover xlarge display-topright">&times;</span>
+                  <div class="modal-content animate-zoom">
+                   
+                    <center>
+                    <img src="./assets/images/stanman.png" style="vertical-align: middle;margin:165px 0px">
+                    </center> 
+                  </div>
+                </div>
+            </div>
+            <div class="citycard">
+                <form>
+                    <div class="select is-warning">
+                        <select id="dropdownMenu">
+                            <option> What's Your City? </option>
+                            <option value="boston massachusetts"> Boston </option>
+                            <option value="daytona florida"> Daytona </option>
+                            <option value="naples florida"> Naples </option>
+                            <option value="ocala florida"> Ocala </option>
+                            <option value="tampa florida"> Tampa </option>
+                        </select>
+                    </div>
+                    <input type="submit" value="Select City" class="button has-text-warning is-dark is-focused">
+                </form>
+            </div>
+        </header>
+        <br>
+        <main>
+            <div class="datacard card">
+                <header class="card-header">
+                    <p class="has-text-black title card-header-title is-1 is-underlined" id="displayCity"> City </p>
+                    <div></div>
+                </header>
+                <div class="card-content has-text-centered">
+                    <div class="box">
+                        <div class="media-left">
+                            <figure class="image is-96x96">
+                                <img src="./assets/images/thermometer_icon.png" alt="thermometer icon">
+                            </figure>
+                        </div>
+                        <div class="content is-1">
+                            <p class="title is-3"> Current Temperature </p>
+                            <p class="title is-4" id="rtTemp"></p>
+                            </p>
+                        </div>
+                    </div>
 
-<select name="weather" id="weather">
-  <option value="snow">Snow</option>
-  <option value="rain">Rain</option>
-  <option value="hail">Hail</option>
-  <option value="uv">High UV</option>
-</select>
+                    <div class="box">
+                        <div class="media-left">
+                            <figure class="image is-48x48">
+                                <img src="./assets/images/humidity_icon.png" alt="water drop">
+                            </figure>
+                        </div>
+                        <div class="content">
+                            <p class="title is-3"> Humidity </p>
+                            <p class="title is-4" id="rtHumidity"></p>
+                        </div>
+                    </div>
 
-</center>
+                    <div class="box">
+                        <div class="media-left">
+                            <figure class="image is-96x96">
+                                <img src="./assets/images/feelslike_icon.png" alt="fever emoji">
+                            </figure>
+                        </div>
+                        <div class="content">
+                            <p class="title is-3"> Feels Like </p>
+                            <p class="title is-4" id="rtTempApp"></p>
+                        </div>
+                    </div>
+
+                    <div class="box">
+                        <div class="media-left">
+                            <figure class="image is-96x96">
+                                <img src="./assets/images/precipitation_icon.png" alt="rain cloud">
+                            </figure>
+                        </div>
+                        <div class="content">
+                            <p class="title is-3"> Chance of Precipitation </p>
+                            <p class="title is-4" id="rtPrec"></p>
+                        </div>
+                    </div>
+
+                    <div class="box">
+                        <div class="media-left">
+                            <figure class="image is-96x96">
+                                <img src="./assets/images/sun_icon.png" alt="sun emoji">
+                            </figure>
+                        </div>
+                        <div class="content">
+                            <p class="title is-3"> Average UV Index </p>
+                            <p class="title is-4" id="rtUV"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
+        <br>
         <footer>
-            <style>
-                p {
-                    margin-left: 525px;
-                }
-                
-            </style>
-            <p>Made in Collaboration by: Sarah Stewart, Matthew Franklin, Bruce Millspaugh, Margaux Glovier, Jacob Garland</p>
+            <div class="content has-text-centered has-text-weight-bold has-text-black">
+                <p class="is-underlined">Made in Collaboration by:</p>
+                <p>Sarah Stewart, Matthew Franklin, Bruce Millspaugh, Margaux Glovier, Jacob Garland</p>
+                <a href="https://www.tomorrow.io/" class="">With resources from Tomorrow.io Weather API</a>
+            </div>
         </footer>
+        <script src="./script.js"></script>
     </body>
 </html>
